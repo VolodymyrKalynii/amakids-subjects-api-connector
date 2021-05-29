@@ -1,6 +1,6 @@
 {
   "name": "amakids-subjects-api-connector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
