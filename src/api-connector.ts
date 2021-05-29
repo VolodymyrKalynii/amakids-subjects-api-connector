@@ -48,7 +48,7 @@ export class ApiConnector {
 
     public getMainPageData():Promise<MetadataResp> {
         const data:RequestData = {
-            action: this.actions.getMainPageData,
+            action: this.ACTIONS.GET_MAIN_PAGE_DATA,
             method: 'get',
         };
 
@@ -57,7 +57,7 @@ export class ApiConnector {
 
     public getHomeworkPageData<T>():Promise<HomeworkDataResp<T>> {
         const data:RequestData = {
-            action: this.actions.getHomeworkPageData,
+            action: this.ACTIONS.GET_HOMEWORK_PAGE_DATA,
             method: 'get',
         };
 
@@ -66,7 +66,7 @@ export class ApiConnector {
 
     public getGamePageData(isHomework:boolean, game:string):Promise<GamePageResp> {
         const data:RequestData = {
-            action: this.actions.getGamePageData,
+            action: this.ACTIONS.GET_GAME_PAGE_DATA,
             method: 'get',
             params: {
                 isHomework: isHomework ? 1 : 0,
@@ -81,7 +81,7 @@ export class ApiConnector {
         const token = generateTokenForGameSaving(p);
 
         const data:RequestData = {
-            action: this.actions.saveGame,
+            action: this.ACTIONS.SAVE_GAME,
             method: 'get',
             params: {
                 token,
@@ -96,7 +96,7 @@ export class ApiConnector {
         const token = generateTokenForHomeworkGameSaving(p);
 
         const data:RequestData = {
-            action: this.actions.saveHomeworkGame,
+            action: this.ACTIONS.SAVE_HOMEWORK_GAME,
             method: 'get',
             params: {
                 token,
@@ -109,7 +109,7 @@ export class ApiConnector {
 
     public startNewRound<T>(p:{ subjectID:number; userID:number; }):Promise<StartNewRoundResp<T>> {
         const data:RequestData = {
-            action: this.actions.startNewRound,
+            action: this.ACTIONS.START_NEW_ROUND,
             method: 'get',
             params: {
                 ...p
@@ -121,13 +121,13 @@ export class ApiConnector {
 
     //---------------
 
-    private readonly actions = {
-        getHomeworkPageData: 'student_interface_homework_page',
-        getMainPageData: 'student_interface_subject_page',
-        saveGame: 'student_interface_save_game_action',
-        startNewRound: 'student_interface_start_new_round_action',
-        saveHomeworkGame: 'student_interface_save_homework_progress',
-        getGamePageData: 'student_interface_game_page'
+    private readonly ACTIONS = {
+        GET_HOMEWORK_PAGE_DATA: 'student_interface_homework_page',
+        GET_MAIN_PAGE_DATA: 'student_interface_subject_page',
+        SAVE_GAME: 'student_interface_save_game_action',
+        START_NEW_ROUND: 'student_interface_start_new_round_action',
+        SAVE_HOMEWORK_GAME: 'student_interface_save_homework_progress',
+        GET_GAME_PAGE_DATA: 'student_interface_game_page'
     };
 
     private constructor({isIsolated, apiHost, homeworkPath, moveToRoot, openNotificationWithIcon}:P) {
