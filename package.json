@@ -1,0 +1,30 @@
+{
+  "name": "amakids-subjects-api-connector",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VolodymyrKalynii/amakids-subjects-api-connector.git"
+  },
+  "author": "VolodymyrKalynii",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VolodymyrKalynii/amakids-subjects-api-connector/issues"
+  },
+  "homepage": "https://github.com/VolodymyrKalynii/amakids-subjects-api-connector#readme",
+  "description": "",
+  "dependencies": {
+    "md5": "^2.3.0",
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/md5": "^2.3.0",
+    "typescript": "^4.2.4",
+    "tsconfig": "^7.0.0"
+  }
+}
