@@ -1,0 +1,1 @@
+# amakids-subjects-api-connector
