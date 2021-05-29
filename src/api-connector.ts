@@ -4,7 +4,7 @@ import {apiConfig} from './config';
 
 import {outputActions} from './output-actions';
 import {buildFormData} from './utils';
-import {mainPageDataIsolatedResp, homeworkPageDataIsolatedResp, gamePageDataIsolatedResp} from './isolated-resps';
+import {mainPageDataIsolatedResp} from './isolated-resps';
 import {
     GamePageResp,
     MetadataResp,
@@ -55,16 +55,16 @@ export class ApiConnector {
         return this.request(data, false, mainPageDataIsolatedResp);
     }
 
-    public getHomeworkPageData<T>():Promise<HomeworkDataResp<T>> {
+    public getHomeworkPageData<T>(isolatedResp:HomeworkDataResp<T>):Promise<HomeworkDataResp<T>> {
         const data:RequestData = {
             action: this.ACTIONS.GET_HOMEWORK_PAGE_DATA,
             method: 'get',
         };
 
-        return this.request(data, false, homeworkPageDataIsolatedResp);
+        return this.request(data, false, isolatedResp);
     }
 
-    public getGamePageData(isHomework:boolean, game:string):Promise<GamePageResp> {
+    public getGamePageData(isHomework:boolean, game:string, isolatedResp:GamePageResp):Promise<GamePageResp> {
         const data:RequestData = {
             action: this.ACTIONS.GET_GAME_PAGE_DATA,
             method: 'get',
@@ -74,7 +74,7 @@ export class ApiConnector {
             }
         };
 
-        return this.request(data, false, gamePageDataIsolatedResp);
+        return this.request(data, false, isolatedResp);
     }
 
     public saveGame(p:Omit<SaveGameFormDataT, 'hometaskId'>):Promise<SaveGameResp> {
