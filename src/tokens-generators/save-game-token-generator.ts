@@ -1,4 +1,5 @@
-import md5 from 'md5';
+import md5 = require("md5");
+
 import {SaveGameFormDataT} from '../res-types';
 
 export const generateTokenForGameSaving = ({gameData}:Omit<SaveGameFormDataT, 'hometaskId'>) => {
