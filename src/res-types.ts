@@ -81,7 +81,7 @@ export type HomeworkDataResp<T = string> = {
     };
 };
 
-export type SaveGameFormDataT = {
+export type SaveGameFormDataT<T = string> = {
     hometaskId:number;
     gameData:{
         userId:number;
@@ -91,6 +91,7 @@ export type SaveGameFormDataT = {
         gameResult:{
             success:boolean;
         };
+        section:T;
     };
 };
 
