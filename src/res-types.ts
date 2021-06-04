@@ -93,6 +93,7 @@ export type SaveGameFormDataT<T = string> = {
         };
         section:T;
     };
+    subjectID:number;
 };
 
 export type SaveHomeworkGameResp = {
