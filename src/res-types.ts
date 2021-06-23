@@ -37,6 +37,7 @@ export type MetadataResp = {
     };
     subjectID:number;
     hasHometask:boolean;
+    hometaskSection?:string;
 };
 //#
 
@@ -113,6 +114,9 @@ export type SaveGameResp = {
 export type StartNewRoundResp<T> = HomeworkDataResp<T>;
 
 export type GamePageResp = {
+    common:MetadataResp['common'];
+    game:string;
+    isHomework?:boolean;
     homework?:{
         id:number;
         gameSettings:SingleGameDataResp<any>;
