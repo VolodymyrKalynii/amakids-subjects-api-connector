@@ -78,7 +78,11 @@ export type HomeworkDataResp<T = string> = {
             hometaskDone:boolean,
             currentRoundFinished:boolean;
         },
-        cartoonData:{needShow:boolean;};
+        cartoonData:{
+            needShow:boolean;
+            nextEpisodeDate:string;
+            urls:Array<string>;
+        };
     };
 };
 
