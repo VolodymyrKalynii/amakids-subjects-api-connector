@@ -80,8 +80,8 @@ export type HomeworkDataResp<T = string> = {
         },
         cartoonData:{
             needShow:boolean;
-            nextEpisodeDate:string;
-            urls:Array<string>;
+            nextEpisodeDate?:string;
+            urls?:Array<string>;
         };
     };
 };
