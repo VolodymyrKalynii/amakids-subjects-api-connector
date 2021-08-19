@@ -35,6 +35,9 @@ export type MetadataResp = {
         };
         subjectID:number;
     };
+    games?:{
+        [key:string]:Array<string>;
+    };
     subjectID:number;
     hasHometask:boolean;
     hometaskSection?:string;
