@@ -49,7 +49,7 @@ export type SingleGameDataResp<T = string> = {
     section:T;
     levels:string;
     settings:{
-        [key:string]:string;
+        [key:string]:string|Array<string>;
     };
 };
 
