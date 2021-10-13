@@ -107,7 +107,7 @@ export type SaveGameFormDataT<T = string> = {
 export type SaveHomeworkGameResp = {
     gameResultSaverResponse:boolean;
     homeworkProgress:HomeworkDataResp['homeworkData']['progress'];
-    homeworkProgressSaverResponse:{
+    homeworkProgressSaverResponse?:{
         action:'unlocked_new_element' | 'room_done' | 'round_done';
     };
 };
