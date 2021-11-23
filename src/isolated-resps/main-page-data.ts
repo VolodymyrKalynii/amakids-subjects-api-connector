@@ -1,6 +1,6 @@
-import {MetadataResp} from '../res-types';
+import {SubjectPageDataResp} from '../res-types';
 
-export const subjectPageDataIsolatedResp:Promise<MetadataResp> = new Promise((resolve) =>
+export const subjectPageDataIsolatedResp:Promise<SubjectPageDataResp> = new Promise((resolve) =>
     setTimeout(() => resolve(
         {
             'common': {
