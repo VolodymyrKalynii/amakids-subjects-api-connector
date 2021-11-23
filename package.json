@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "patch": "npm version patch",
-    "minor": "npm version minor"
+    "minor": "npm version minor",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
