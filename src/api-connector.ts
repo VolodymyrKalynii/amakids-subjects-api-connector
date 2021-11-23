@@ -4,10 +4,10 @@ import {apiConfig} from './config';
 
 import {outputActions} from './output-actions';
 import {buildFormData} from './utils';
-import {mainPageDataIsolatedResp} from './isolated-resps';
+import {subjectPageDataIsolatedResp} from './isolated-resps';
 import {
     GamePageResp,
-    MetadataResp,
+    SubjectPageDataResp,
     SaveGameFormDataT,
     SaveGameResp,
     HomeworkDataResp,
@@ -46,13 +46,16 @@ export class ApiConnector {
         return ApiConnector.instance;
     }
 
-    public getMainPageData():Promise<MetadataResp> {
+    public getSubjectPageData(subjectID?:number):Promise<SubjectPageDataResp> {
         const data:RequestData = {
-            action: this.ACTIONS.GET_MAIN_PAGE_DATA,
+            action: this.ACTIONS.GET_SUBJECT_PAGE_DATA,
             method: 'get',
+            params: {
+                subjectID
+            }
         };
 
-        return this.request(data, false, mainPageDataIsolatedResp);
+        return this.request(data, false, subjectPageDataIsolatedResp);
     }
 
     public getHomeworkPageData<T>(isolatedResp:HomeworkDataResp<T>):Promise<HomeworkDataResp<T>> {
@@ -123,7 +126,7 @@ export class ApiConnector {
 
     private readonly ACTIONS = {
         GET_HOMEWORK_PAGE_DATA: 'student_interface_homework_page',
-        GET_MAIN_PAGE_DATA: 'student_interface_subject_page',
+        GET_SUBJECT_PAGE_DATA: 'student_interface_subject_page',
         SAVE_GAME: 'student_interface_save_game_action',
         START_NEW_ROUND: 'student_interface_start_new_round_action',
         SAVE_HOMEWORK_GAME: 'student_interface_save_homework_progress',

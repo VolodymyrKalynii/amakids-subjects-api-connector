@@ -1,4 +1,4 @@
-export type MetadataResp = {
+export type SubjectPageDataResp = {
     common:{
         documentsToAccepting:Array<string>;
         access:{
@@ -38,6 +38,7 @@ export type MetadataResp = {
     games?:{
         [key:string]:Array<string>;
     };
+    enabledSections?:Array<string>;
     subjectID:number;
     hasHometask:boolean;
     hometaskSection?:string;
@@ -54,7 +55,7 @@ export type SingleGameDataResp<T = string> = {
 };
 
 export type HomeworkDataResp<T = string> = {
-    common:MetadataResp['common'];
+    common:SubjectPageDataResp['common'];
     subjectID:number;
     hasAccessToPage:boolean,
     homeworkData:{
@@ -121,7 +122,7 @@ export type SaveGameResp = {
 export type StartNewRoundResp<T> = HomeworkDataResp<T>;
 
 export type GamePageResp = {
-    common:MetadataResp['common'];
+    common:SubjectPageDataResp['common'];
     game:string;
     isHomework?:boolean;
     homework?:{

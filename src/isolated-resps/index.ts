@@ -1,1 +1,1 @@
-export {mainPageDataIsolatedResp} from './main-page-data';
+export {subjectPageDataIsolatedResp} from './main-page-data';
