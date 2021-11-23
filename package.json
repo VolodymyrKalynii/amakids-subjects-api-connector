@@ -4,7 +4,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "patch": "npm version patch",
+    "minor": "npm version minor"
   },
   "repository": {
     "type": "git",
