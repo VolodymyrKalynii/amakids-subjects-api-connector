@@ -58,10 +58,13 @@ export class ApiConnector {
         return this.request(data, false, subjectPageDataIsolatedResp);
     }
 
-    public getHomeworkPageData<T>(isolatedResp:HomeworkDataResp<T>):Promise<HomeworkDataResp<T>> {
+    public getHomeworkPageData<T>(isolatedResp:HomeworkDataResp<T>, subjectID?:number):Promise<HomeworkDataResp<T>> {
         const data:RequestData = {
             action: this.ACTIONS.GET_HOMEWORK_PAGE_DATA,
             method: 'get',
+            params: {
+                subjectID
+            }
         };
 
         return this.request(data, false, isolatedResp);
