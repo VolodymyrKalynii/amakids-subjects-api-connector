@@ -70,13 +70,14 @@ export class ApiConnector {
         return this.request(data, false, isolatedResp);
     }
 
-    public getGamePageData(isHomework:boolean, game:string, isolatedResp:GamePageResp):Promise<GamePageResp> {
+    public getGamePageData(isHomework:boolean, game:string, isolatedResp:GamePageResp, subjectID?:number):Promise<GamePageResp> {
         const data:RequestData = {
             action: this.ACTIONS.GET_GAME_PAGE_DATA,
             method: 'get',
             params: {
                 isHomework: isHomework ? 1 : 0,
-                game
+                game,
+                subjectID
             }
         };
 
