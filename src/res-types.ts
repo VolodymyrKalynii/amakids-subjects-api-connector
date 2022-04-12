@@ -42,6 +42,15 @@ export type SubjectPageDataResp = {
     subjectID:number;
     hasHometask:boolean;
     hometaskSection?:string;
+    sections?:{
+        hometask:{
+            status:boolean;
+            data?:{
+                active:boolean;
+                progressPercent:number;
+            };
+        };
+    };
 };
 //#
 
