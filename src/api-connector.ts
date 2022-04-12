@@ -46,7 +46,7 @@ export class ApiConnector {
         return ApiConnector.instance;
     }
 
-    public getSubjectPageData(subjectID?:number):Promise<SubjectPageDataResp> {
+    public getSubjectPageData(subjectID?:number, isolatedResp?:SubjectPageDataResp):Promise<SubjectPageDataResp> {
         const data:RequestData = {
             action: this.ACTIONS.GET_SUBJECT_PAGE_DATA,
             method: 'get',
@@ -55,7 +55,12 @@ export class ApiConnector {
             }
         };
 
-        return this.request(data, false, subjectPageDataIsolatedResp);
+        return this.request(
+            data,
+            false,
+            isolatedResp
+                ? isolatedResp
+                : subjectPageDataIsolatedResp);
     }
 
     public getHomeworkPageData<T>(isolatedResp:HomeworkDataResp<T>, subjectID?:number):Promise<HomeworkDataResp<T>> {
