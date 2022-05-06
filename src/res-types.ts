@@ -42,6 +42,8 @@ export type SubjectPageDataResp = {
     subjectID:number;
     hasHometask:boolean;
     hometaskSection?:string;
+    studyStage?:number;
+    nextLessonDate?:string;
     sections?:{
         hometask:{
             status:boolean;
