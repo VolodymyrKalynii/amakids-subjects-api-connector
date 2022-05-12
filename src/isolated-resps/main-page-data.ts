@@ -16,7 +16,7 @@ export const subjectPageDataIsolatedResp:Promise<SubjectPageDataResp> = new Prom
                 'availableSubjects': {'1': {'id': 1}, '11': {'id': 11}},
                 'settings': {'langCode': 'ru'},
                 'company': {'title': 'SmartUm'},
-                'country': {'id': '1', 'title': 'Украина', 'currencySign': 'грн.'},
+                'country': {'id': '1', 'title': 'Украина', 'currencySign': 'грн.', code: 'ua'},
                 'course': {'subjectID': 11, 'status': 'process', 'avatarID': 0, 'isIntensive': false},
                 'subjectID': 11
             },
