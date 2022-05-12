@@ -23,6 +23,7 @@ export type SubjectPageDataResp = {
             title:string;
         };
         country:{
+            code:string;
             id:string;
             title:string;
             currencySign:string;
